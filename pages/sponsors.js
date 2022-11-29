@@ -1,15 +1,14 @@
 import Head from 'next/head'
 import Video from '../components/video'
 import styles from '../styles/Home.module.css'
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faTrophy, faAward, faMedal, faRibbon } from "@fortawesome/free-solid-svg-icons"
+import { FaTrophy, FaAward, FaMedal, FaRibbon } from "react-icons/fa"
 
 const supporters = [
-    {id: 0, name: 'Karen Kostroff, M.D., FACS', icon: faTrophy, color: 'FFFFFF'},
-    {id: 1, name: 'Beth C. Tortolani Foundation', icon: faAward, color: 'deeppink'},
-    {id: 2, name: 'New York Breast Cancer Reconstruction Associates', icon: faAward, color: 'deeppink'},
-    {id: 3, name: 'AAA Northeast', icon: faAward, color: 'deeppink'},
-    {id: 4, name: 'We Care Fund of the Nassau County Bar Association', icon: faAward, color: 'deeppink'},
+    {id: 0, name: 'Karen Kostroff, M.D., FACS', icon: 'trophy', color: 'FFFFFF'},
+    {id: 1, name: 'Beth C. Tortolani Foundation', icon: 'award', color: 'deeppink'},
+    {id: 2, name: 'New York Breast Cancer Reconstruction Associates', icon: 'award', color: 'deeppink'},
+    {id: 3, name: 'AAA Northeast', icon: 'award', color: 'deeppink'},
+    {id: 4, name: 'We Care Fund of the Nassau County Bar Association', icon: 'award', color: 'deeppink'},
     // {id: 0, name: '', icon: {}, color: ''},
 ]
 
@@ -21,10 +20,20 @@ const supporters = [
 {/* <h2 className='grey mem-h2'><Tier icon={faAward} color='deeppink' />Friend</h2> */}
 {/* <h2 className='pink mem-h2'><img src='/gift.png' />Gift Icon</h2> */}
 
+const Award = props => {
+    switch (props.icon) {
+        case "trophy": return <FaTrophy style={{color: props.color}} />
+        case "award": return <FaAward style={{color: props.color}} />
+        case "medal": return <FaMedal style={{color: props.color}} />
+        case "ribbon": return <FaRibbon style={{color: props.color}} />
+        default: return null
+    }
+}
+
 const Tier = props => {
     return (
         <span className='award'>
-            <FontAwesomeIcon icon={props.icon} style={{ fontsize: "1.5rem", color: props.color}} />
+            <Award icon={props.icon} color={props.color} />
             <style jsx>{`.award {width: 2rem; margin: 0 1.75rem; text-align: center;}`}</style>
         </span>
     )
@@ -53,7 +62,10 @@ export default function Support() {
 
             <section className='supporter-list'>
                 {supporters.map(supporter =>
-                    <h2 className={supporter.id % 2 === 0 ? 'grey mem-h2' : 'pink mem-h2'} key={supporter.id}><Tier icon={supporter.icon} color={supporter.color} />{supporter.name}</h2>
+                    <h2 className={supporter.id % 2 === 0 ? 'grey mem-h2' : 'pink mem-h2'} key={supporter.id}>
+                        <Tier icon={supporter.icon} color={supporter.color} />
+                        {supporter.name}
+                    </h2>
                 )}
             </section>
 
