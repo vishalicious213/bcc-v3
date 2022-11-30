@@ -80,6 +80,12 @@ const Catalog = ({items}) => {
                     justify-content: space-between;
                 }
 
+                h3 {
+                    font-size: 1.75rem;
+                    margin-bottom: 0;
+                    color: deeppink;
+                } 
+
                 .gift-details {
                     
                 }
