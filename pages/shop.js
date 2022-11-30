@@ -1,8 +1,9 @@
 import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 import Link from "next/link"
-import { items } from "../content/items"
+// import { items } from "../content/items"
 import Catalog from "../components/Catalog"
+import { gifts } from "../content/gifts"
 
 export default function Boobtique() {
   // console.log('items', items)
@@ -59,7 +60,7 @@ export default function Boobtique() {
 
           <h2 className='shop-h2'>Make a donation and send a comfort basket or bag to a loved one</h2>
           <section className='catalog'>
-            <Catalog items={items} />
+            <Catalog items={gifts} />
           </section>
       </main>
 
