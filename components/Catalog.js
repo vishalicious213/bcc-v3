@@ -19,8 +19,15 @@ const Catalog = ({items}) => {
 
     return items.map(item => {
         return (
-            <section key={item.id} className='item'>
-                <div className='item-detail'>
+            <section key={item.id} className='gift' style={{backgroundImage: `url(${item.img})`}}>
+                <div className='gift-txt'>
+                    <div className='gift-details'>
+                        <h3>{item.name}</h3>
+                        <p className='pricing-detail'><b>Donation:</b> <span className='price'>${item.price/100}.00</span></p>
+                        <p>{item.short}</p>
+                    </div>
+                </div>
+                {/* <div className='item-detail'>
                     <Link href={`/items/${item.slug}`}>
                         <div className='link'>
                             <h2>{item.name}</h2>
@@ -35,58 +42,107 @@ const Catalog = ({items}) => {
                         <span className='quantity'>{quantity(item.id)}</span>
                         <button onClick={() => removeItemFromCart(item.id)}>-</button>
                     </div>
-                </div>
+                </div> */}
+
+
 
                 <style jsx>
                 {`
-                .item {
-                    // outline: 1px solid red;
+                .gift {
                     width: 100%;
-                }
-
-                .item-detail {
-                    outline: 1px solid orange;
-                    margin-bottom: 1rem;
-                }
-
-                .item-pic {
-                    // max-width: 50%;
-                }
-
-                img {
-                    width: 100%;
-                }
-
-                .link {
-                    cursor: pointer;
-                }
-
-                .buttons {
                     display: flex;
-                    justify-content: center;
-                    margin: .5rem 0;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border-bottom: 1px solid #b01e65;
+                    min-height: 75vh;
+                    margin-bottom: 2rem;
                 }
 
-                button {
-                    font-size: 1.1rem;
+                .gift-txt {
+                    width: 100%;
+                    min-height: 50%;
+                    padding-left: 2rem;
+                    padding-right: 2rem;
+                    padding-bottom: 2rem;
+                    background: rgba(0, 0, 0, 0.5);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
                 }
 
-                .quantity {
-                    margin: 0 1rem;
-                    font-size: 1.5rem;
+                .gift-details {
+                    
+                }
+
+                .pricing-detail {
+                    color: gainsboro;
+                    color: #f5d3e4;
+                }
+
+                .price {
+                    color: white;
                 }
 
                 @media only screen and (min-width: 800px) {
-                    .item {
-                        max-width: 48%;
+                    .gift:hover {
+                        outline: 2px solid #b01e65;
+                        background-size: auto;
                     }
                 }
 
-                @media only screen and (min-width: 1200px) {
-                    .item {
-                        max-width: 32%;
-                    }
-                }
+
+
+                // .item {
+                //     // outline: 1px solid red;
+                //     width: 100%;
+                // }
+
+                // .item-detail {
+                //     outline: 1px solid orange;
+                //     margin-bottom: 1rem;
+                // }
+
+                // .item-pic {
+                //     // max-width: 50%;
+                // }
+
+                // img {
+                //     width: 100%;
+                // }
+
+                // .link {
+                //     cursor: pointer;
+                // }
+
+                // .buttons {
+                //     display: flex;
+                //     justify-content: center;
+                //     margin: .5rem 0;
+                // }
+
+                // button {
+                //     font-size: 1.1rem;
+                // }
+
+                // .quantity {
+                //     margin: 0 1rem;
+                //     font-size: 1.5rem;
+                // }
+
+                // @media only screen and (min-width: 800px) {
+                //     .item {
+                //         max-width: 48%;
+                //     }
+                // }
+
+                // @media only screen and (min-width: 1200px) {
+                //     .item {
+                //         max-width: 32%;
+                //     }
+                // }
                 `}
                 </style>
             </section>

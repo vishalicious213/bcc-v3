@@ -57,6 +57,7 @@ export default function Boobtique() {
             </div>
           </section>
 
+          <h2 className='shop-h2'>Make a donation and send a comfort basket or bag to a loved one</h2>
           <section className='catalog'>
             <Catalog items={items} />
           </section>
@@ -77,11 +78,19 @@ export default function Boobtique() {
           // border-radius: 50%;
         }
 
+        .shop-h2 {
+          margin-bottom: 2rem;
+          margin-top: 2rem;
+          color: #f5d3e4;
+          text-align: center;
+      }
+
         .catalog {
           // outline: 1px solid black;
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
+          color: white;
         }
 
         .button-container {
@@ -116,6 +125,24 @@ export default function Boobtique() {
 
         .button:focus {
             outline: none;
+        }
+
+        @media only screen and (min-width: 800px) {
+          .catalog {
+              display: grid;
+              grid-gap: 2rem;
+              grid-template-columns: 1fr 1fr;
+              margin-bottom: 3rem;
+          }
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .catalog {
+                display: grid;
+                grid-gap: 2rem;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin-bottom: 3rem;
+            }
         }
         `}            
         </style>
