@@ -26,7 +26,14 @@ const Catalog = ({items}) => {
                         <p className='pricing-detail'><b>Donation:</b> <span className='price'>${item.price/100}.00</span></p>
                         <p>{item.short}</p>
                     </div>
+
+                    <div className='buttons'>
+                        <button onClick={() => addItemToCart(item)}>+</button>
+                        <span className='quantity'>{quantity(item.id)}</span>
+                        <button onClick={() => removeItemFromCart(item.id)}>-</button>
+                    </div>
                 </div>
+
                 {/* <div className='item-detail'>
                     <Link href={`/items/${item.slug}`}>
                         <div className='link'>
@@ -84,6 +91,37 @@ const Catalog = ({items}) => {
 
                 .price {
                     color: white;
+                }
+
+                .buttons {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+
+                button {
+                    color: gainsboro;
+                    background-color: #b01e65;
+                    border: none;
+                    font-size: 1.1rem;
+                    height: 2rem;
+                    width: 45%;
+                    padding: .5rem 0;
+                    border-radius: 1rem;
+                }
+
+                button:hover {
+                    color: white;
+                    background-color: deeppink;
+                }
+
+                .quantity {
+                    color: gainsboro;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    font-size: 1.1rem;
+                    width: 5rem;
+                    padding: .5rem 0;
+                    text-align: center;
                 }
 
                 @media only screen and (min-width: 800px) {

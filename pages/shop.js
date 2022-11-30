@@ -87,11 +87,13 @@ export default function Boobtique() {
       }
 
         .catalog {
-          // outline: 1px solid black;
           display: flex;
           flex-wrap: wrap;
           justify-content: space-between;
           color: white;
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .button-container {
