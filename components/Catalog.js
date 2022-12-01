@@ -25,6 +25,7 @@ const Catalog = ({items}) => {
                         <h3>{item.name}</h3>
                         <p className='pricing-detail'><b>Donation:</b> <span className='price'>${item.price/100}.00</span></p>
                         <p>{item.short}</p>
+                        {/* <Link href={`/items/${item.slug}`}>View details</Link> */}
                     </div>
 
                     <div className='buttons'>
@@ -111,7 +112,7 @@ const Catalog = ({items}) => {
                     border: none;
                     font-size: 1.1rem;
                     height: 2rem;
-                    width: 45%;
+                    width: 40%;
                     padding: .5rem 0;
                     border-radius: 1rem;
                 }
@@ -124,8 +125,10 @@ const Catalog = ({items}) => {
                 .quantity {
                     color: gainsboro;
                     background-color: rgba(0, 0, 0, 0.2);
+                    outline: 1px solid #b01e65;
+                    border-radius: 1rem;
                     font-size: 1.1rem;
-                    width: 5rem;
+                    width: 10%;
                     padding: .5rem 0;
                     text-align: center;
                 }
