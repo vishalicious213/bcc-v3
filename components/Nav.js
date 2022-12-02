@@ -44,7 +44,7 @@ export default function Nav() {
                         </Link>
                     </div>
                 </div>
-                <Link href='/boobtique'>
+                <Link href='/shop'>
                     <a>Shop</a>
                 </Link>
                 <div className='hover-menu'>
@@ -88,7 +88,7 @@ export default function Nav() {
                     <a className='redline' href='/about'>About Us &#9662;</a>
                     <a href='/team'>Our Team</a>
                     <a href='/volunteer'>Volunteer</a>
-                    <a className='redline' href='/boobtique'>Shop</a>
+                    <a className='redline' href='/shop'>Shop</a>
                     <a className='redline' href='/donate'>Donate &#9662;</a>
                     <a href='/memory'>In Memory Of</a>
                     <a href='/sponsors'>Sponsors</a>
