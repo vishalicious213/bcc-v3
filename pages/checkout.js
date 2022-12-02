@@ -62,6 +62,9 @@ const Checkout = () => {
                 {`
                 .checkout-container {
                     padding: 0 .5rem 0;
+                    max-width: 800px;
+                    margin: 2rem auto;
+                    color: white;
                 }
 
                 .item-name {
@@ -73,7 +76,7 @@ const Checkout = () => {
                 .item-details {
                     display: flex;
                     justify-content: space-between;
-                    border-bottom: 1px solid lightgrey;
+                    border-bottom: 1px solid #b01e65;
                 }
 
                 .item-details p {
