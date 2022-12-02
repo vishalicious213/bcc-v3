@@ -102,7 +102,6 @@ const shippingInfo = () => {
                 {`
                 #form-container {
                     width: 100%;
-                    // border-top: 5px solid gainsboro;
                     margin-bottom: 2rem;
                     max-width: 800px;
                     margin: 2rem auto;
@@ -112,7 +111,6 @@ const shippingInfo = () => {
                 form {
                     display: flex;
                     flex-direction: column;
-                    // width: 90%;
                     margin: 1rem auto 0;
                 }
 
@@ -139,7 +137,7 @@ const shippingInfo = () => {
                 #order-button {
                     color: gainsboro;
                     font-size: 1.1rem;
-                    background-color: grey;
+                    background-color: #292c2f;
                     border: none;
                     border-radius: .35rem;
                     padding: .5rem;
@@ -148,14 +146,17 @@ const shippingInfo = () => {
 
                 #order-button:hover {
                     color: white;
-                    background-color: black;
+                    background-color: #b01e65;
                     transition: .25s
+                }
+
+                .field:focus, #order-button:focus {
+                    outline: none;
+                    border: 2px solid #b01e65;
                 }
                 `}
             </style>
         </div>
-
-
     )
 }
 
