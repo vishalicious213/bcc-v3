@@ -59,9 +59,14 @@ export default function Boobtique() {
           </section>
 
           <h2 className='shop-h2'>Make a donation and send a comfort basket or bag to a loved one</h2>
+
           <section className='catalog'>
             <Catalog items={gifts} />
           </section>
+
+          <div className='button-container'>
+            <button>View Cart</button>
+          </div>
       </main>
 
       <style jsx>
@@ -99,11 +104,10 @@ export default function Boobtique() {
         .button-container {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            background-image: linear-gradient(#b01e65 50%, #292c2f 50%);
+            margin-bottom: 3rem;
         }
 
-        .button {
+        button {
             color: gainsboro;
             background-color: #b01e65;
             font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
@@ -115,18 +119,19 @@ export default function Boobtique() {
             border-radius: 1rem;
             text-align: center;
             padding: .75rem;
-            width: 9rem;
-            height: 4rem;
+            // min-width: 12rem;
+            width: 90%;
+            height: 3rem;
         }
 
-        .button:hover {
+        button:hover {
             color: white;
             background-color: deeppink;
             border: 2px solid white;
             cursor: pointer;
         }
 
-        .button:focus {
+        button:focus {
             outline: none;
         }
 
@@ -135,8 +140,7 @@ export default function Boobtique() {
               display: grid;
               grid-gap: 2rem;
               grid-template-columns: 1fr 1fr;
-              margin-bottom: 3rem;
-          }
+            }
         }
 
         @media only screen and (min-width: 1200px) {
@@ -144,7 +148,6 @@ export default function Boobtique() {
                 display: grid;
                 grid-gap: 2rem;
                 grid-template-columns: 1fr 1fr 1fr;
-                margin-bottom: 3rem;
             }
         }
         `}            
