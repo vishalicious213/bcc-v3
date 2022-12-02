@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 export default function ShopBanner() {
     return (
         <div className='shop-banner-container'>
-            <h2>If you are looking for a basket for yourself or a friend, <a className='shop-link' href='/boobtique'>visit our shop</a>!</h2>
+            <h2>If you are looking for a basket for yourself or a friend, <a className='shop-link' href='/shop'>visit our shop</a>!</h2>
 
             <style jsx>
             {`
