@@ -9,7 +9,7 @@ const shippingInfo = () => {
 
     return (
         <div id='form-container'>
-            <h1>Shipping</h1>
+            <h2>Shipping</h2>
             <form id='order-form' name='order-form' method='POST' data-netlify='true'>
                 <input type='hidden' name='form-name' value='order-form' />
 
@@ -104,12 +104,15 @@ const shippingInfo = () => {
                     width: 100%;
                     // border-top: 5px solid gainsboro;
                     margin-bottom: 2rem;
+                    max-width: 800px;
+                    margin: 2rem auto;
+                    color: white;
                 }
 
                 form {
                     display: flex;
                     flex-direction: column;
-                    width: 90%;
+                    // width: 90%;
                     margin: 1rem auto 0;
                 }
 
@@ -121,14 +124,16 @@ const shippingInfo = () => {
                 }
 
                 .field {
-                    border: 2px solid gainsboro;
+                    background: black;
+                    border: 2px solid #292c2f;
                     border-radius: .35rem;
                     margin-bottom: .5rem;
                     padding: 1rem;
+                    color: gainsboro;
                 }
 
                 .field:hover {
-                    border: 2px solid black;
+                    border: 2px solid #b01e65;
                 }
 
                 #order-button {
