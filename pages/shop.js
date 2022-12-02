@@ -65,7 +65,9 @@ export default function Boobtique() {
           </section>
 
           <div className='button-container'>
-            <button>View Cart</button>
+            <Link href='checkout'>
+              <button>View Cart</button>
+            </Link>
           </div>
       </main>
 
