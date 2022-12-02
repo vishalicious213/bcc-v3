@@ -25,7 +25,7 @@ const Catalog = ({items}) => {
                         <h3>{item.name}</h3>
                         <p className='pricing-detail'><b>Donation:</b> <span className='price'>${item.price/100}.00</span></p>
                         <p>{item.short}</p>
-                        {/* <Link href={`/items/${item.slug}`}>View details</Link> */}
+                        <Link href={`/items/${item.slug}`}>View details</Link>
                     </div>
 
                     <div className='buttons'>

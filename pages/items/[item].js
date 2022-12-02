@@ -1,12 +1,12 @@
 import { useRouter } from "next/router"
-import { items } from "../../content/items"
+import { gifts } from "../../content/gifts"
 
 const Item = () => {
     const router = useRouter()
     const { item } = router.query
     // console.log(item)
 
-    const product = items.find(i => i.slug === item)
+    const product = gifts.find(i => i.slug === item)
     // console.log('product', product)
 
     return (
@@ -14,11 +14,24 @@ const Item = () => {
             <h1>{product.name}</h1>
             <h2>${product.price/100}.00</h2>
             <img src={product.img} alt={product.alt} />
-            <div dangerouslySetInnerHTML={{ __html: product.desc}}></div>
+            <div>{product.desc}</div>
 
             <style jsx>
                 {`
-                
+                h1 {
+                    font-size: 2rem;
+                    margin-bottom: 0;
+                    color: #b01e65;
+                }
+
+                h2 {
+                    color: gainsboro;
+                    color: #f5d3e4;
+                }
+
+                div {
+                    color: gainsboro;
+                }
                 `}
             </style>
         </>
