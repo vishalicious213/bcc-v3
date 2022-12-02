@@ -121,7 +121,7 @@ export default function Boobtique() {
             border-radius: 1rem;
             text-align: center;
             padding: .75rem;
-            // min-width: 12rem;
+            max-width: 800px;
             width: 90%;
             height: 3rem;
         }

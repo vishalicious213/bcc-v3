@@ -49,10 +49,12 @@ const Checkout = () => {
                         Total: ${total/100}.00
                     </div>
 
-                    <Link href='/checkout'>
-                        {/* <button onClick={processPayment}>Process Payment</button> */}
-                        <button onClick={processShipping}>Process Shipping</button>
-                    </Link>
+                    <div className='button-container'>
+                        <Link href='/checkout'>
+                            {/* <button onClick={processPayment}>Process Payment</button> */}
+                            <button onClick={processShipping}>Enter Shipping Info</button>
+                        </Link>
+                    </div>
                 </div>
             ) : (
                 <p>The cart is empty</p>
@@ -95,21 +97,41 @@ const Checkout = () => {
                     font-size: 1.1rem;
                     font-weight: 600;
                     margin-top: 2rem;
+                    margin-bottom: 2rem;
+                }
+
+                .button-container {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 3rem;
                 }
 
                 button {
-                    width: 100%;
-                    padding: .5rem;
-                    margin-top: 2rem;
-                    cursor: pointer;
-                    border: 1px solid gainsboro;
-                    color: dimgray;
-                    font-weight: 600;
+                    color: gainsboro;
+                    background-color: #b01e65;
+                    font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    letter-spacing: .1rem;
+                    text-transform: uppercase;
+                    border: 2px solid gainsboro;
+                    border-radius: 1rem;
+                    text-align: center;
+                    padding: .75rem;
+                    max-width: 800px;
+                    width: 90%;
+                    height: 3rem;
                 }
-
+        
                 button:hover {
-                    border: 1px solid gray;
-                    color: black;
+                    color: white;
+                    background-color: deeppink;
+                    border: 2px solid white;
+                    cursor: pointer;
+                }
+        
+                button:focus {
+                    outline: none;
                 }
                 `}
             </style>            
