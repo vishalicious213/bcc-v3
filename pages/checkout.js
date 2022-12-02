@@ -55,6 +55,10 @@ const Checkout = () => {
                             {/* <button onClick={processShipping}>Enter Shipping Info</button> */}
                             <button>Enter Shipping Info</button>
                         </Link>
+
+                        <Link href='/shop'>
+                        <button>Return to Shop</button>
+                        </Link>
                     </div>
                 </div>
             ) : (
@@ -103,8 +107,9 @@ const Checkout = () => {
 
                 .button-container {
                     display: flex;
-                    justify-content: center;
-                    margin-bottom: 3rem;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    margin-bottom: 2rem;
                 }
 
                 button {
@@ -119,9 +124,10 @@ const Checkout = () => {
                     border-radius: 1rem;
                     text-align: center;
                     padding: .75rem;
-                    max-width: 800px;
+                    max-width: 300px;
                     width: 90%;
                     height: 3rem;
+                    margin-bottom: 1rem;
                 }
         
                 button:hover {
@@ -133,6 +139,16 @@ const Checkout = () => {
         
                 button:focus {
                     outline: none;
+                }
+
+                @media only screen and (min-width: 640px) {
+                    .button-container {
+                        margin-bottom: 3rem;
+                    }
+
+                    button {
+                        margin-bottom: 0;
+                    }
                 }
                 `}
             </style>            
