@@ -6,24 +6,24 @@ import { loadStripe } from '@stripe/stripe-js'
 const Checkout = () => {
     const { cart, total } = useCart()
 
-    const processPayment = async () => {
-        const url = "/.netlify/functions/charge-card"
-        const newCart = cart.map(({ id, qty, name }) => ({
-            id,
-            qty,
-            name,
-        }))
-        const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
-        const { data } = await axios.post(url, { cart: newCart })
-        // console.log('process payment', data)
-        await stripe.redirectToCheckout({ sessionId: data.id})
-    }
+    // const processPayment = async () => {
+    //     const url = "/.netlify/functions/charge-card"
+    //     const newCart = cart.map(({ id, qty, name }) => ({
+    //         id,
+    //         qty,
+    //         name,
+    //     }))
+    //     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
+    //     const { data } = await axios.post(url, { cart: newCart })
+    //     // console.log('process payment', data)
+    //     await stripe.redirectToCheckout({ sessionId: data.id})
+    // }
 
-    const processShipping = async () => {
-        const url = "/.netlify/functions/shipping"
-        const { data } = await axios.post(url)
-        console.log('shipping', data)
-    }
+    // const processShipping = async () => {
+    //     const url = "/.netlify/functions/shipping"
+    //     const { data } = await axios.post(url)
+    //     console.log('shipping', data)
+    // }
 
     return (
         <div>
@@ -50,9 +50,10 @@ const Checkout = () => {
                     </div>
 
                     <div className='button-container'>
-                        <Link href='/checkout'>
+                        <Link href='/shipping-info'>
                             {/* <button onClick={processPayment}>Process Payment</button> */}
-                            <button onClick={processShipping}>Enter Shipping Info</button>
+                            {/* <button onClick={processShipping}>Enter Shipping Info</button> */}
+                            <button>Enter Shipping Info</button>
                         </Link>
                     </div>
                 </div>
