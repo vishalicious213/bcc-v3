@@ -10,14 +10,28 @@ const Item = () => {
     // console.log('product', product)
 
     return (
-        <>
-            <h1>{product.name}</h1>
-            <h2>${product.price/100}.00</h2>
-            <img src={product.img} alt={product.alt} />
-            <div>{product.desc}</div>
+        <div className='main'>
+            <div>
+                <h1>{product.name}</h1>
+                <h2>${product.price/100}.00</h2>
+            </div>
+            <div className='details'>
+                <img src={product.img} alt={product.alt} />
+                <div className='desc'>
+                    {product.short}
+                    {product.desc}
+                </div>
+            </div>
 
             <style jsx>
                 {`
+                .main {
+                    width: 90%;
+                    margin: auto;
+                    color: gainsboro;
+                    margin-bottom: 2rem;
+                }
+
                 h1 {
                     font-size: 2rem;
                     margin-bottom: 0;
@@ -29,12 +43,35 @@ const Item = () => {
                     color: #f5d3e4;
                 }
 
-                div {
-                    color: gainsboro;
+                img {
+                    width: 90%;
+                    max-width: 800px;
+                }
+
+                .desc {
+                    width: 90%;
+                    margin-top: 1rem;
+                    max-width: 800px;
+                }
+
+                @media only screen and (min-width: 1200px) {
+                    .details {
+                        display: flex;
+                        margin-bottom: 2rem;
+                    }
+
+                    img {
+                        width: 50%;
+                        margin-right: 2rem;
+                    }
+
+                    .desc {
+                        margin-top: 0;
+                    }
                 }
                 `}
             </style>
-        </>
+        </div>
     )
 }
 
